@@ -1,5 +1,5 @@
 package com.mycompany.finalbankingapp;
-
+//Katleho Mokoena
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ public class FinalBankingApp {
     static int pin[] = {1234, 1234, 1234};
     static int id[] = {1234, 1357, 2468};
     static double balance[] = {5000, 4000, 3000};
+    static double dueBalance[] = {530, 480, 408};
     
     static ArrayList<String> historySavings = new ArrayList<>();
     static ArrayList<Double> historyAmountSavings = new ArrayList<>();
@@ -48,10 +49,18 @@ public class FinalBankingApp {
             else if(dec == 3){
                 System.out.println("Thank you for using our app");
                 System.exit(0);
+                
+                System.out.println(" ");
+                System.out.println("--------------------------------------------------------------------------");
+                System.out.println(" ");
             }
             else{
                 System.out.println("Please enter a valid input");
                 getDec();
+                
+                System.out.println(" ");
+                System.out.println("--------------------------------------------------------------------------");
+                System.out.println(" ");
             }
         }
     }
@@ -66,20 +75,38 @@ public class FinalBankingApp {
                 pin1 = k.nextInt();
                 
                 tries++;
-                for(int i = 0; i < 5; i++){
+                for(int i = 0; i < id.length ; i++){
                     if(id1 == id[i] && pin1 == pin[i]){
                         System.out.println("Would you like to use your (1) savings or (2) credit account?");
                         account = k.nextInt();
+                        
                         if(account == 1){
                             balanceSavings = balance[i];
+                            balanceCredit = dueBalance[i];
+                            //
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                            
                             choice();
                         }
-                        if(account == 2){
+                        else if(account == 2){
+                            balanceCredit = dueBalance[i];
+                            
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                
                             choice();
                         }
                         else{
                             System.out.println("Invaild option (Default account is savings)");
                             account = 1;
+                            
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                
                             deposit();
                         }
                         
@@ -89,27 +116,50 @@ public class FinalBankingApp {
                         System.out.println("How can we help you?");
                         System.out.println("Would you like to use your (1) savings or (2) credit account?");
                         account = k.nextInt();
+                        
                         if(account == 1){
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                
                             deposit();
                         }
-                        if(account == 2){
+                        else if(account == 2){
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                
                             choice();
                         }
                         else{
                             System.out.println("Invaild option (Default account is savings)");
                             account = 1;
+                            
+                            System.out.println(" ");
+                            System.out.println("--------------------------------------------------------------------------");
+                            System.out.println(" ");
+                
                             deposit();
                         }
                         tries = 4;
                         x = 3;
                     }
                     else if(tries == 4){
-                       System.out.println("You have tried too many failed attempts"); 
+                       System.out.println("You have tried too many failed attempts");
+                       
+                       System.out.println(" ");
+                       System.out.println("--------------------------------------------------------------------------");
+                       System.out.println(" ");
+                
                        getDec();
                        x = 3;
                     }
                     else {
                         System.out.println("Password or ID number was incorrect please try again");
+                        
+                        System.out.println(" ");
+                        System.out.println("--------------------------------------------------------------------------");
+                        System.out.println(" ");
                         
                         login();
                     }
@@ -123,9 +173,9 @@ public class FinalBankingApp {
         
         
             System.out.println("Please enter your name");
-            name1 = k.next();
+            name1 = k.nextLine();
             System.out.println("Please enter your surname");
-            surname1 = k.next();
+            surname1 = k.nextLine();
             System.out.println("Please enter you ID number");
             idR = k.nextInt();
             System.out.println("Please enter a 4 digit pin");
@@ -140,10 +190,19 @@ public class FinalBankingApp {
                 System.out.println("ID number: " + idR);
                 System.out.println("Current Balance: " + balanceSavings);
                 
+                System.out.println(" ");
+                System.out.println("--------------------------------------------------------------------------");
+                System.out.println(" ");
+                
                 login();
             }
             else {
                 System.out.println("Pins do not match please try again");
+                
+                System.out.println(" ");
+                System.out.println("--------------------------------------------------------------------------");
+                System.out.println(" ");
+                
                 register();
             }
         
@@ -156,26 +215,55 @@ public class FinalBankingApp {
         dec = k.nextInt();
         
         if(dec == 1){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             deposit();
         }
         if(dec == 2){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             withdraw();
         }
         if(dec ==3){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             transfer();
         }
         if(dec == 4){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             checkBalance();
         }
         if(dec == 5){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             checkHistory();
         }
         if(dec == 6){
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
            System.out.println("Thank you for using our app");
             System.exit(0);
         }
         else {
             System.out.println("Please choose a valid number");
+            
+            System.out.println(" ");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(" ");
+                
             choice();
         }
     }
@@ -191,7 +279,7 @@ public class FinalBankingApp {
             balanceSavings += amount;
 
             historySavings.add("Deposited: R");
-            historyAmountCredit.add(amount);
+            historyAmountSavings.add(amount);
 
             choice();
         }
@@ -208,7 +296,7 @@ public class FinalBankingApp {
             choice();  
         }
     }
-    
+    //
     static void withdraw(){
         Scanner k = new Scanner(System.in);
         
@@ -336,18 +424,19 @@ public class FinalBankingApp {
     
     static void checkHistory(){
         if(account == 1){
-        for(int i=0; i < historySavings.size(); i++){
-            System.out.println(historySavings.get(i) + historyAmountSavings.get(i));
+            for(int i=0; i < historySavings.size(); i++){
+                System.out.println(historySavings.get(i) + historyAmountSavings.get(i));
+            }
+            System.out.println("Current balance: R" + balanceSavings);
+            choice();
         }
-        System.out.println("Current balance: R" + balanceSavings);
-        choice();
-        }
-        else{
-          for(int i=0; i < historyCredit.size(); i++){
-            System.out.println(historyCredit.get(i) + historyAmountCredit.get(i));
-        }
-        System.out.println("Current balance: R" + balanceCredit);
-        choice();  
+        else
+        {
+            for(int i=0; i < historyCredit.size(); i++){
+                System.out.println(historyCredit.get(i) + historyAmountCredit.get(i));
+            }
+            System.out.println("Current balance: R" + balanceCredit);
+            choice();  
         }
     }
     
@@ -356,7 +445,6 @@ public class FinalBankingApp {
         intro();
         getDec();
         check();
-
     }
 }
 
